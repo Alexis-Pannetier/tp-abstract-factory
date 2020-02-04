@@ -1,9 +1,9 @@
 package fr.mds.tpabstractfactory.factory;
 
-import fr.mds.tpabstractfactory.shape.Circle;
-import fr.mds.tpabstractfactory.shape.Rectangle;
-import fr.mds.tpabstractfactory.shape.Shape;
-import fr.mds.tpabstractfactory.shape.Square;
+import fr.mds.tpabstractfactory.model.shape.Circle;
+import fr.mds.tpabstractfactory.model.shape.Rectangle;
+import fr.mds.tpabstractfactory.model.shape.Shape;
+import fr.mds.tpabstractfactory.model.shape.Square;
 
 public class ShapeFactory extends AbstractFactory{
 

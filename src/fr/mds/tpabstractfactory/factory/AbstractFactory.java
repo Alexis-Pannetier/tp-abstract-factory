@@ -1,7 +1,7 @@
 package fr.mds.tpabstractfactory.factory;
 
-import fr.mds.tpabstractfactory.color.Color;
-import fr.mds.tpabstractfactory.shape.Shape;
+import fr.mds.tpabstractfactory.model.color.Color;
+import fr.mds.tpabstractfactory.model.shape.Shape;
 
 public abstract class AbstractFactory {
 

@@ -1,20 +1,22 @@
-import fr.mds.tpabstractfactory.color.Blue;
-import fr.mds.tpabstractfactory.color.Color;
-import fr.mds.tpabstractfactory.color.Green;
-import fr.mds.tpabstractfactory.color.Red;
 import fr.mds.tpabstractfactory.factory.AbstractFactory;
 import fr.mds.tpabstractfactory.factory.ColorFactory;
 import fr.mds.tpabstractfactory.factory.FactoryProducer;
 import fr.mds.tpabstractfactory.factory.ShapeFactory;
-import fr.mds.tpabstractfactory.shape.Circle;
-import fr.mds.tpabstractfactory.shape.Rectangle;
-import fr.mds.tpabstractfactory.shape.Shape;
-import fr.mds.tpabstractfactory.shape.Square;
+import fr.mds.tpabstractfactory.model.Item;
+import fr.mds.tpabstractfactory.model.color.Blue;
+import fr.mds.tpabstractfactory.model.color.Color;
+import fr.mds.tpabstractfactory.model.color.Green;
+import fr.mds.tpabstractfactory.model.color.Red;
+import fr.mds.tpabstractfactory.model.shape.Circle;
+import fr.mds.tpabstractfactory.model.shape.Rectangle;
+import fr.mds.tpabstractfactory.model.shape.Shape;
+import fr.mds.tpabstractfactory.model.shape.Square;
 
 public class AbstractFactoryPatternDemo {
 
 	public static void main(String[] args) {
 
+		// EXERCICE 1
 		// get shape factory
 		AbstractFactory shapeFactory = FactoryProducer.getFactory(ShapeFactory.SHAPE);
 		// get an object of Shape Circle
@@ -47,6 +49,21 @@ public class AbstractFactoryPatternDemo {
 		Shape myShape = FactoryProducer.getFactory(ShapeFactory.SHAPE).getShape(Circle.CIRCLE);
 		// call draw method of Shape Circle
 		myShape.draw();
+		
+		// EXERCICE 2
+		//get directly an item with factory auto selecting
+		Item item = FactoryProducer.getItem(Blue.BLUE);
+		System.out.println("this is a " + item.getName());
+		item = FactoryProducer.getItem(Green.GREEN);
+		System.out.println("this is a " + item.getName());
+		item = FactoryProducer.getItem(Red.RED);
+		System.out.println("this is a " + item.getName());
+		item = FactoryProducer.getItem(Square.SQUARE);
+		System.out.println("this is a " + item.getName());
+		item = FactoryProducer.getItem(Rectangle.RECTANGLE);
+		System.out.println("this is a " + item.getName());
+		item = FactoryProducer.getItem(Circle.CIRCLE);
+		System.out.println("this is a " + item.getName());
 		
 	}
 

@@ -1,9 +1,9 @@
 package fr.mds.tpabstractfactory.factory;
 
-import fr.mds.tpabstractfactory.color.Blue;
-import fr.mds.tpabstractfactory.color.Color;
-import fr.mds.tpabstractfactory.color.Green;
-import fr.mds.tpabstractfactory.color.Red;
+import fr.mds.tpabstractfactory.model.color.Blue;
+import fr.mds.tpabstractfactory.model.color.Color;
+import fr.mds.tpabstractfactory.model.color.Green;
+import fr.mds.tpabstractfactory.model.color.Red;
 
 public class ColorFactory extends AbstractFactory {
 
