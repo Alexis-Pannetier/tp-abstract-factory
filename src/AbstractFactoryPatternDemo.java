@@ -2,6 +2,8 @@ import fr.mds.tpabstractfactory.factory.AbstractFactory;
 import fr.mds.tpabstractfactory.factory.ColorFactory;
 import fr.mds.tpabstractfactory.factory.FactoryProducer;
 import fr.mds.tpabstractfactory.factory.ShapeFactory;
+import fr.mds.tpabstractfactory.model.CombinedItem;
+import fr.mds.tpabstractfactory.model.DrawItem;
 import fr.mds.tpabstractfactory.model.Item;
 import fr.mds.tpabstractfactory.model.color.Blue;
 import fr.mds.tpabstractfactory.model.color.Color;
@@ -17,6 +19,7 @@ public class AbstractFactoryPatternDemo {
 	public static void main(String[] args) {
 
 		// EXERCICE 1
+		System.out.println("-----Exercice 1-----");
 		// get shape factory
 		AbstractFactory shapeFactory = FactoryProducer.getFactory(ShapeFactory.SHAPE);
 		// get an object of Shape Circle
@@ -51,6 +54,7 @@ public class AbstractFactoryPatternDemo {
 		myShape.draw();
 		
 		// EXERCICE 2
+		System.out.println("-----Exercice 2-----");
 		//get directly an item with factory auto selecting
 		Item item = FactoryProducer.getItem(Blue.BLUE);
 		System.out.println("this is a " + item.getName());
@@ -65,6 +69,27 @@ public class AbstractFactoryPatternDemo {
 		item = FactoryProducer.getItem(Circle.CIRCLE);
 		System.out.println("this is a " + item.getName());
 		
+		// EXERCICE 3
+		System.out.println("-----Exercice 3-----");
+		CombinedItem cItem1 = new CombinedItem();
+		cItem1.setColor(colorFactory.getColor(Blue.BLUE));
+		cItem1.setShape(shapeFactory.getShape(Square.SQUARE));
+		CombinedItem cItem2 = new CombinedItem();
+		cItem2.setColor(colorFactory.getColor(Red.RED));
+		cItem2.setShape(shapeFactory.getShape(Square.SQUARE));
+		CombinedItem cItem3 = new CombinedItem();
+		cItem3.setColor(colorFactory.getColor(Blue.BLUE));
+		cItem3.setShape(shapeFactory.getShape(Circle.CIRCLE));
+		CombinedItem cItem4 = new CombinedItem();
+		cItem4.setColor(colorFactory.getColor(Green.GREEN));
+		cItem4.setShape(shapeFactory.getShape(Rectangle.RECTANGLE));
+		DrawItem dItem = new DrawItem();
+		dItem.setName("mon dessin");
+		dItem.getItems().add(cItem1);
+		dItem.getItems().add(cItem2);
+		dItem.getItems().add(cItem3);
+		dItem.getItems().add(cItem4);
+		dItem.print();
 	}
 
 }

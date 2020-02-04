@@ -8,7 +8,7 @@ public class Square implements Shape, Item {
 
 	@Override
 	public void draw() {
-		System.out.println(" draw a Square");
+		System.out.println("draw a Square");
 	}
 
 	@Override
